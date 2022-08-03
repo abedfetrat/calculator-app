@@ -1,0 +1,92 @@
+:root {
+  /* Text sizes */
+  --text-size-display: 2.5rem;
+  --text-size-primary-keys: 2rem;
+  --text-size-secondary-keys: 1.75rem;
+
+  /* Spacings */
+  /* 13px */
+  --space-xs: 0.8125rem;
+  /* 24px */
+  --space-sm: 1.5rem;
+  /* 30px */
+  --space-md: 1.875rem;
+  /* 32px */
+  --space-lg: 2rem;
+
+  /* Colors */
+  --white: hsla(0, 0%, 100%, 1);
+  --dark-grayish-blue: hsla(198, 20%, 13%, 1);
+  --yellow: hsla(52, 100%, 62%, 1);
+
+  --dark-blue-300: hsla(224, 51%, 76%, 1);
+  --dark-blue-400: hsla(225, 21%, 49%, 1);
+  --dark-blue-500: hsla(224, 28%, 35%, 1);
+  --dark-blue-600: hsla(223, 26%, 31%, 1);
+  --dark-blue-700: hsla(224, 30%, 21%, 1);
+  --dark-blue-800: hsla(224, 36%, 15%, 1);
+
+  --cream-10: hsla(31, 100%, 100%, 1);
+  --cream-50: hsla(0, 0%, 93%, 1);
+  --cream-100: hsla(0, 0%, 90%, 1);
+  --cream-150: hsla(45, 7%, 89%, 1);
+  --cream-200: hsla(31, 24%, 89%, 1);
+  --cream-400: hsla(0, 5%, 81%, 1);
+  --cream-600: hsla(27, 15%, 65%, 1);
+  --cream-700: hsla(35, 11%, 61%, 1);
+
+  --red-200: hsla(6, 93%, 67%, 1);
+  --red-400: hsla(6, 63%, 50%, 1);
+  --red-600: hsla(6, 70%, 34%, 1);
+
+  --orange-200: hsla(25, 100%, 61%, 1);
+  --orange-400: hsla(25, 98%, 40%, 1);
+  --orange-600: hsla(25, 99%, 27%, 1);
+
+  --cyan-50: hsla(176, 100%, 79%, 1);
+  --cyan-100: hsla(177, 92%, 70%, 1);
+  --cyan-200: hsla(176, 100%, 44%, 1);
+  --cyan-300: hsla(184, 40%, 56%, 1);
+  --cyan-400: hsla(184, 42%, 37%, 1);
+  --cyan-600: hsla(185, 58%, 25%, 1);
+
+  --violet-100: hsla(285, 91%, 52%, 1);
+  --violet-200: hsla(280, 56%, 44%, 1);
+  --violet-250: hsla(268, 54%, 44%, 1);
+  --violet-300: hsla(290, 70%, 36%, 1);
+  --violet-400: hsla(281, 89%, 26%, 1);
+  --violet-600: hsla(268, 47%, 21%, 1);
+  --violet-800: hsla(268, 71%, 12%, 1);
+  --violet-900: hsla(268, 75%, 9%, 1);
+}
+
+/* Themes */
+.theme-1 {
+    /* Background colors */
+    --color-page-background: var(--dark-blue-600);
+    --color-theme-switch-background: var(--dark-blue-700);
+    --color-display-background: var(--dark-blue-800);
+    --color-keypad-background: var(var(--dark-blue-700));
+    --color-key-background: var(--cream-200);
+    --color-delete-key-background: var(--dark-blue-400);
+    --color-reset-key-background: var(--dark-blue-400);
+    --color-equals-key-background: var(--red-400);
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font: inherit;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--background-color);
+}

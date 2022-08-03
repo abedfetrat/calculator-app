@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="calculator">
+      <!-- TOP -->
+      <div class="top">
+        <h1>calc</h1>
+        <div class="theme">
+          <span>theme</span>
+          <div class="theme-switch-wrapper">
+            <div class="theme-switch-labels">
+              <label for="theme-1">1</label>
+              <label for="theme-2">2</label>
+              <label for="theme-3">3</label>
+            </div>
+            <div class="theme-switch">
+              <input id="theme-1" type="radio" name="theme-select" value="1" />
+              <input id="theme-2" type="radio" name="theme-select" value="2" />
+              <input id="theme-3" type="radio" name="theme-select" value="3" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- DISPLAY -->
+      <div class="display">399,981</div>
+      <!-- KEYS -->
+      <div class="keys">
+        <!-- ROW 1 -->
+        <button id="7" class="key" type="button">7</button>
+        <button id="8" class="key" type="button">8</button>
+        <button id="9" class="key" type="button">9</button>
+        <button id="del" class="key" type="button">del</button>
+        <!-- ROW 2 -->
+        <button id="4" class="key" type="button">4</button>
+        <button id="5" class="key" type="button">5</button>
+        <button id="6" class="key" type="button">6</button>
+        <button id="add" class="key" type="button">+</button>
+        <!-- ROW 3 -->
+        <button id="1" class="key" type="button">1</button>
+        <button id="2" class="key" type="button">2</button>
+        <button id="3" class="key" type="button">3</button>
+        <button id="subtract" class="key" type="button">-</button>
+        <!-- ROW 4 -->
+        <button id="decimal" class="key" type="button">.</button>
+        <button id="0" class="key" type="button">0</button>
+        <button id="divide" class="key" type="button">/</button>
+        <button id="multiply" class="key" type="button">x</button>
+        <!-- ROW 5 -->
+        <button id="reset" class="key" type="button">reset</button>
+        <button id="sum" class="key" type="button">=</button>
+      </div>
+    </main>
+
+    <!--  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+</html>

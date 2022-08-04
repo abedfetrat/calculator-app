@@ -7,7 +7,7 @@
   /* Spacings */
   --space-keypad-horizontal-padding: 1.5rem;
   --space-keypad-vertical-padding: 1.5rem;
-   --space-keypad-key-horizontal-gap: 0.8125rem;
+  --space-keypad-key-horizontal-gap: 0.8125rem;
   --space-keypad-key-vertical-gap: 0.8125rem;
 
   /* Sizes */
@@ -115,6 +115,10 @@
 
   /* Hover/Focus/Active colors */
   --color-theme-switch--hover: var(--red-200);
+  --color-key-background--hover: var(--cream-10);
+  --color-delete-key-background--hover: var(--dark-blue-300);
+  --color-reset-key-background--hover: var(--dark-blue-300);
+  --color-equals-key-background--hover: var(--red-200);
 }
 
 /* General styling */
@@ -285,6 +289,7 @@ body {
 /* Calculator keys */
 .key {
   --shadow-color: var(--color-key-shadow);
+  cursor: pointer;
   display: grid;
   place-items: center;
   height: 4rem;
@@ -295,6 +300,20 @@ body {
   font: inherit;
   font-size: var(--text-size-primary-keys);
   color: var(--color-key-text);
+  /* disable tap higlight on mobile chrome */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.key:hover,
+.key:focus-visible {
+  background-color: var(--color-key-background--hover);
+}
+
+.key:active {
+  align-self: end;
+  height: calc(4rem - 0.25rem);
+  box-shadow: none;
 }
 
 .key span {
@@ -316,14 +335,29 @@ body {
   color: var(--color-delete-key-text);
 }
 
+#delete:hover,
+#delete:focus-visible {
+  background-color: var(--color-delete-key-background--hover);
+}
+
 #reset {
   --shadow-color: var(--color-reset-key-shadow);
   background-color: var(--color-reset-key-background);
   color: var(--color-reset-key-text);
 }
 
+#reset:hover,
+#reset:focus-visible {
+  background-color: var(--color-reset-key-background--hover);
+}
+
 #equals {
   --shadow-color: var(--color-equals-key-shadow);
   background-color: var(--color-equals-key-background);
   color: var(--color-equals-key-text);
+}
+
+#equals:hover,
+#equals:focus-visible {
+  background-color: var(--color-equals-key-background--hover);
 }

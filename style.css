@@ -16,8 +16,10 @@
 
   /* Colors */
   --white: hsla(0, 0%, 100%, 1);
-  --dark-grayish-blue: hsla(198, 20%, 13%, 1);
   --yellow: hsla(52, 100%, 62%, 1);
+
+  --dark-grayish-blue-600: hsla(221, 14%, 31%, 1);
+  --dark-grayish-blue-900: hsla(198, 20%, 13%, 1);
 
   --dark-blue-300: hsla(224, 51%, 76%, 1);
   --dark-blue-400: hsla(225, 21%, 49%, 1);
@@ -63,7 +65,7 @@
 /* Themes */
 .theme-1 {
     /* Background colors */
-    --color-page-background: var(--dark-blue-600);
+    --color-main-background: var(--dark-blue-600);
     --color-theme-switch-background: var(--dark-blue-700);
     --color-display-background: var(--dark-blue-800);
     --color-keypad-background: var(var(--dark-blue-700));
@@ -72,6 +74,23 @@
     --color-reset-key-background: var(--dark-blue-400);
     --color-equals-key-background: var(--red-400);
 
+    /* Key shadow colors */
+    --color-key-shadow: var(--cream-600);
+    --color-delete-key-shadow: var(--dark-blue-500);
+    --color-reset-key-shadow: var(--dark-blue-500);
+    --color-equals-key-shadow: var(--red-600);
+
+    /* Text colors */
+    --color-calculator-name: var(--white);
+    --color-theme-switch-text: var(--white);
+    --color-display-text: var(--white);
+    --color-key-text: var(--dark-grayish-blue-600);
+    --color-delete-key-text: var(--white);
+    --color-reset-key-text: var(--white);
+    --color-equals-key-text: var(--white);
+
+    /* Other colors */
+    --color-theme-switch: var(--red-400);
 }
 
 *,
@@ -88,5 +107,5 @@ button {
 
 body {
   font-family: "League Spartan", sans-serif;
-  background-color: var(--background-color);
+  background-color: var(--color-main-background);
 }

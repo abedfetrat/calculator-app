@@ -5,14 +5,13 @@
   --text-size-secondary-keys: 1.75rem;
 
   /* Spacings */
-  /* 13px */
-  --space-xs: 0.8125rem;
-  /* 24px */
-  --space-sm: 1.5rem;
-  /* 30px */
-  --space-md: 1.875rem;
-  /* 32px */
-  --space-lg: 2rem;
+  --space-keypad-horizontal-padding: 1.5rem;
+  --space-keypad-vertical-padding: 1.5rem;
+  --space-keypad-key-horizontal-gap: 0.8125rem;
+  --space-keypad-key-vertical-gap: 0.8125rem;
+
+  /* Sizes */
+  --size-display-height: 5.5rem;
 
   /* Colors */
   --white: hsla(0, 0%, 100%, 1);
@@ -64,35 +63,39 @@
 
 /* Themes */
 .theme-1 {
-    /* Background colors */
-    --color-main-background: var(--dark-blue-600);
-    --color-theme-switch-background: var(--dark-blue-700);
-    --color-display-background: var(--dark-blue-800);
-    --color-keypad-background: var(var(--dark-blue-700));
-    --color-key-background: var(--cream-200);
-    --color-delete-key-background: var(--dark-blue-400);
-    --color-reset-key-background: var(--dark-blue-400);
-    --color-equals-key-background: var(--red-400);
+  /* Background colors */
+  --color-main-background: var(--dark-blue-600);
+  --color-theme-switch-background: var(--dark-blue-700);
+  --color-display-background: var(--dark-blue-800);
+  --color-keypad-background: var(var(--dark-blue-700));
+  --color-key-background: var(--cream-200);
+  --color-delete-key-background: var(--dark-blue-400);
+  --color-reset-key-background: var(--dark-blue-400);
+  --color-equals-key-background: var(--red-400);
 
-    /* Key shadow colors */
-    --color-key-shadow: var(--cream-600);
-    --color-delete-key-shadow: var(--dark-blue-500);
-    --color-reset-key-shadow: var(--dark-blue-500);
-    --color-equals-key-shadow: var(--red-600);
+  /* Key shadow colors */
+  --color-key-shadow: var(--cream-600);
+  --color-delete-key-shadow: var(--dark-blue-500);
+  --color-reset-key-shadow: var(--dark-blue-500);
+  --color-equals-key-shadow: var(--red-600);
 
-    /* Text colors */
-    --color-calculator-name: var(--white);
-    --color-theme-switch-text: var(--white);
-    --color-display-text: var(--white);
-    --color-key-text: var(--dark-grayish-blue-600);
-    --color-delete-key-text: var(--white);
-    --color-reset-key-text: var(--white);
-    --color-equals-key-text: var(--white);
+  /* Text colors */
+  --color-calculator-name: var(--white);
+  --color-theme-switch-text: var(--white);
+  --color-display-text: var(--white);
+  --color-key-text: var(--dark-grayish-blue-600);
+  --color-delete-key-text: var(--white);
+  --color-reset-key-text: var(--white);
+  --color-equals-key-text: var(--white);
 
-    /* Other colors */
-    --color-theme-switch: var(--red-400);
+  /* Other colors */
+  --color-theme-switch: var(--red-400);
+
+  /* Hover/Focus/Active colors */
+  --color-theme-switch--hover: var(--red-200);
 }
 
+/* General styling */
 *,
 *::before,
 *::after {
@@ -101,11 +104,96 @@
   padding: 0;
 }
 
-button {
-  font: inherit;
-}
-
 body {
+  display: grid;
+  place-items: center;
+  padding-block: 1.875rem;
+  padding-inline: 1.5rem;
   font-family: "League Spartan", sans-serif;
   background-color: var(--color-main-background);
+}
+
+/* Calculator top */
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top h1 {
+  font-size: 2rem;
+  color: var(--color-calculator-name);
+}
+
+.top .theme {
+  display: flex;
+  align-items: flex-end;
+  column-gap: 1.625rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.top .theme span {
+  margin-bottom: 0.3125rem;
+}
+
+.theme-switch-labels {
+  display: flex;
+  margin-bottom: 0.3125rem;
+}
+
+.theme-switch-labels label {
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+
+.theme-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 4.4375rem;
+  height: 1.625rem;
+  padding: 0.3125rem;
+  border-radius: 3.125rem;
+  background-color: var(--color-theme-switch-background);
+}
+
+.theme-switch:focus-within .knob {
+  background-color: var(--color-theme-switch--hover);
+}
+
+.theme-switch input {
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(2);
+}
+
+.theme-switch .knob {
+  cursor: pointer;
+  position: absolute;
+  top: 0.3125rem;
+  left: 0.3125rem;
+  z-index: 3;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-theme-switch);
+  transition: 300ms ease-in-out;
+}
+
+.theme-switch .knob:hover {
+  background-color: var(--color-theme-switch--hover);
+}
+
+#theme-select-2:checked ~ .knob {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#theme-select-3:checked ~ .knob {
+  left: calc(100% - 0.3125rem);
+  transform: translateX(-100%);
 }

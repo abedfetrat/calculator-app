@@ -2,7 +2,7 @@
   /* Text sizes */
   --text-size-display: 2.5rem;
   --text-size-primary-keys: 2rem;
-  --text-size-secondary-keys: 1.75rem;
+  --text-size-secondary-keys: 1.25rem;
 
   /* Spacings */
   --space-keypad-horizontal-padding: 1.5rem;
@@ -12,6 +12,7 @@
 
   /* Sizes */
   --size-display-height: 5.5rem;
+  --size-display-horizontal-padding: 1.5rem;
 
   /* Colors */
   --white: hsla(0, 0%, 100%, 1);
@@ -67,7 +68,7 @@
   --color-main-background: var(--dark-blue-600);
   --color-theme-switch-background: var(--dark-blue-700);
   --color-display-background: var(--dark-blue-800);
-  --color-keypad-background: var(var(--dark-blue-700));
+  --color-keypad-background: var(--dark-blue-700);
   --color-key-background: var(--cream-200);
   --color-delete-key-background: var(--dark-blue-400);
   --color-reset-key-background: var(--dark-blue-400);
@@ -105,18 +106,23 @@
 }
 
 body {
-  display: grid;
-  place-items: center;
+  min-height: 100vh;
   padding-block: 1.875rem;
   padding-inline: 1.5rem;
   font-family: "League Spartan", sans-serif;
   background-color: var(--color-main-background);
 }
 
+/* Calculator */
+.calculator {
+  width: 100%;
+}
+
 /* Calculator top */
 .top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .top h1 {
@@ -196,4 +202,78 @@ body {
 #theme-select-3:checked ~ .knob {
   left: calc(100% - 0.3125rem);
   transform: translateX(-100%);
+}
+
+/* Calculator Display */
+.display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: var(--size-display-height);
+  margin-top: 2rem;
+  padding-inline: var(--size-display-horizontal-padding);
+  border-radius: 0.625rem;
+  background-color: var(--color-display-background);
+  font-size: var(--text-size-display);
+  color: var(--color-display-text);
+}
+
+#display-text {
+  margin-top: 2px;
+}
+
+/* Calculator Keypad */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: var(--space-keypad-key-horizontal-gap);
+  row-gap: var(--space-keypad-key-vertical-gap);
+  margin-top: 1.5rem;
+  padding-block: var(--space-keypad-vertical-padding);
+  padding-inline: var(--space-keypad-horizontal-padding);
+  border-radius: 0.625rem;
+  background-color: var(--color-keypad-background);
+}
+
+#reset,
+#equals {
+  grid-column: span 2;
+}
+
+/* Calculator keys */
+.key {
+  --shadow-color: var(--color-key-shadow);
+  height: 4rem;
+  border: none;
+  border-radius: 0.3125rem;
+  background-color: var(--color-key-background);
+  box-shadow: inset 0px -0.25rem 0px var(--shadow-color);
+  font: inherit;
+  font-size: var(--text-size-primary-keys);
+  color: var(--color-key-text);
+}
+
+#delete,
+#reset,
+#equals {
+  font-size: var(--text-size-secondary-keys);
+  text-transform: uppercase;
+}
+
+#delete {
+  --shadow-color: var(--color-delete-key-shadow);
+  background-color: var(--color-delete-key-background);
+  color: var(--color-delete-key-text);
+}
+
+#reset {
+  --shadow-color: var(--color-reset-key-shadow);
+  background-color: var(--color-reset-key-background);
+  color: var(--color-reset-key-text);
+}
+
+#equals {
+  --shadow-color: var(--color-equals-key-shadow);
+  background-color: var(--color-equals-key-background);
+  color: var(--color-equals-key-text);
 }

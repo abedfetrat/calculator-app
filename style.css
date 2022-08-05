@@ -18,6 +18,7 @@
   /* Colors */
   --white: hsla(0, 0%, 100%, 1);
   --yellow: hsla(52, 100%, 62%, 1);
+  --brown: hsla(60, 10%, 19%, 1);
 
   --dark-grayish-blue-600: hsla(221, 14%, 31%, 1);
   --dark-grayish-blue-900: hsla(198, 20%, 13%, 1);
@@ -83,7 +84,7 @@
   }
 }
 
-/* Themes */
+/* ---------------- || Themes || ---------------- */
 .theme-1 {
   /* Background colors */
   --color-main-background: var(--dark-blue-600);
@@ -121,7 +122,81 @@
   --color-equals-key-background--hover: var(--red-200);
 }
 
-/* General styling */
+.theme-2 {
+  /* Background colors */
+  --color-main-background: var(--cream-100);
+  --color-theme-switch-background: var(--cream-400);
+  --color-display-background: var(--cream-50);
+  --color-keypad-background: var(--cream-400);
+  --color-key-background: var(--cream-150);
+  --color-delete-key-background: var(--cyan-400);
+  --color-reset-key-background: var(--cyan-400);
+  --color-equals-key-background: var(--orange-400);
+
+  /* Key shadow colors */
+  --color-key-shadow: var(--cream-700);
+  --color-delete-key-shadow: var(--cyan-600);
+  --color-reset-key-shadow: var(--cyan-600);
+  --color-equals-key-shadow: var(--orange-600);
+
+  /* Text colors */
+  --color-calculator-name: var(--brown);
+  --color-theme-switch-text: var(--brown);
+  --color-display-text: var(--brown);
+  --color-key-text: var(--brown);
+  --color-delete-key-text: var(--white);
+  --color-reset-key-text: var(--white);
+  --color-equals-key-text: var(--white);
+
+  /* Other colors */
+  --color-theme-switch: var(--orange-400);
+
+  /* Hover/Focus/Active colors */
+  --color-theme-switch--hover: var(--orange-200);
+  --color-key-background--hover: var(--white);
+  --color-delete-key-background--hover: var(--cyan-300);
+  --color-reset-key-background--hover: var(--cyan-300);
+  --color-equals-key-background--hover: var(--orange-200);
+}
+
+.theme-3 {
+  /* Background colors */
+  --color-main-background: var(--violet-900);
+  --color-theme-switch-background: var(--violet-800);
+  --color-display-background: var(--violet-800);
+  --color-keypad-background: var(--violet-800);
+  --color-key-background: var(--violet-600);
+  --color-delete-key-background: var(--violet-400);
+  --color-reset-key-background: var(--violet-400);
+  --color-equals-key-background: var(--cyan-200);
+
+  /* Key shadow colors */
+  --color-key-shadow: var(--violet-300);
+  --color-delete-key-shadow: var(--violet-100);
+  --color-reset-key-shadow: var(--violet-100);
+  --color-equals-key-shadow: var(--cyan-100);
+
+  /* Text colors */
+  --color-calculator-name: var(--yellow);
+  --color-theme-switch-text: var(--yellow);
+  --color-display-text: var(--yellow);
+  --color-key-text: var(--yellow);
+  --color-delete-key-text: var(--white);
+  --color-reset-key-text: var(--white);
+  --color-equals-key-text: var(--dark-grayish-blue-900);
+
+  /* Other colors */
+  --color-theme-switch: var(--cyan-200);
+
+  /* Hover/Focus/Active colors */
+  --color-theme-switch--hover: var(--cyan-50);
+  --color-key-background--hover: var(--violet-250);
+  --color-delete-key-background--hover: var(--violet-200);
+  --color-reset-key-background--hover: var(--violet-200);
+  --color-equals-key-background--hover: var(--cyan-50);
+}
+
+/* ---------------- || General styling || ---------------- */
 *,
 *::before,
 *::after {
@@ -146,7 +221,7 @@ body {
   }
 }
 
-/* Calculator */
+/* ---------------- || The Calculator || ---------------- */
 .calculator {
   width: min(100%, 33.75rem);
 }
@@ -178,7 +253,7 @@ body {
   column-gap: 1.625rem;
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--color-theme-switch-text);
 }
 
 .top .theme span {

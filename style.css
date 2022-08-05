@@ -302,6 +302,8 @@ body {
   cursor: pointer;
   opacity: 0;
   transform: scale(2);
+  /* disable tap higlight on mobile chrome */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .theme-switch .knob {

@@ -15,6 +15,10 @@
   --size-display-horizontal-padding: 1.5rem;
   --size-key-border-radius: 0.3125rem;
 
+  /* Durations */
+  --duration-background-transition: 400ms;
+  --duration-text-transition: 120ms;
+
   /* Colors */
   --white: hsla(0, 0%, 100%, 1);
   --yellow: hsla(52, 100%, 62%, 1);
@@ -213,6 +217,7 @@ body {
   padding-inline: 1.5rem;
   font-family: "League Spartan", sans-serif;
   background-color: var(--color-main-background);
+  transition: background-color var(--duration-background-transition) ease;
 }
 
 @media screen and (min-width: 48em) {
@@ -239,6 +244,7 @@ body {
   line-height: 1.6rem;
   letter-spacing: -0.53px;
   color: var(--color-calculator-name);
+  transition: color var(--duration-text-transition) ease;
 }
 
 @media screen and (min-width: 33.75em) {
@@ -254,6 +260,7 @@ body {
   font-size: 0.75rem;
   text-transform: uppercase;
   color: var(--color-theme-switch-text);
+  transition: color var(--duration-text-transition) ease;
 }
 
 .top .theme span {
@@ -284,6 +291,7 @@ body {
   padding: 0.3125rem;
   border-radius: 3.125rem;
   background-color: var(--color-theme-switch-background);
+  transition: background-color var(--duration-background-transition) ease;
 }
 
 .theme-switch:focus-within .knob {
@@ -336,6 +344,8 @@ body {
   background-color: var(--color-display-background);
   font-size: var(--text-size-display);
   color: var(--color-display-text);
+  transition: background-color var(--duration-background-transition) ease,
+    color var(--duration-text-transition) ease;
 }
 
 #display-text {
@@ -354,6 +364,7 @@ body {
   padding-inline: var(--space-keypad-horizontal-padding);
   border-radius: 0.625rem;
   background-color: var(--color-keypad-background);
+  transition: background-color var(--duration-background-transition) ease;
 }
 
 #reset,
@@ -362,6 +373,7 @@ body {
 }
 
 /* Calculator keys */
+/* TODO: use pseudo element instead of inset shadow */
 .key {
   --shadow-color: var(--color-key-shadow);
   cursor: pointer;
@@ -378,6 +390,8 @@ body {
   /* disable tap higlight on mobile chrome */
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  transition: background-color var(--duration-background-transition) ease,
+    color var(--duration-text-transition) ease;
 }
 
 .key:hover,

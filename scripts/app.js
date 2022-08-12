@@ -15,8 +15,8 @@ function changeTheme(e) {
 /* Calculator */
 const evaluator = new Evaluator();
 
-let operand = '';
-let displayText = '';
+let operand = '0';
+let displayText = '0';
 
 const displayElement = document.getElementById('display-text');
 const keys = document.querySelectorAll('.key');
@@ -62,8 +62,8 @@ function handleDelete() {
 }
 
 function handleReset() {
-    operand = '';
-    displayText = '';
+    operand = '0';
+    displayText = '0';
     updateDisplay();
 }
 
@@ -118,6 +118,10 @@ function handleNumber(key) {
     operand += key.dataset.value;
 
     // Update display text with the value
-    displayText += key.dataset.value;
+    if (displayText === '0') {
+        displayText = key.dataset.value;
+    } else {
+        displayText += key.dataset.value;
+    }
     updateDisplay();
 }

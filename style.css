@@ -117,6 +117,7 @@
 
   /* Other colors */
   --color-theme-switch: var(--red-400);
+  --color-display-scrollbar: var(--dark-blue-700);
 
   /* Hover/Focus/Active colors */
   --color-theme-switch--hover: var(--red-200);
@@ -154,6 +155,7 @@
 
   /* Other colors */
   --color-theme-switch: var(--orange-400);
+  --color-display-scrollbar: var(--cream-400);
 
   /* Hover/Focus/Active colors */
   --color-theme-switch--hover: var(--orange-200);
@@ -191,6 +193,7 @@
 
   /* Other colors */
   --color-theme-switch: var(--cyan-200);
+  --color-display-scrollbar: var(--violet-600);
 
   /* Hover/Focus/Active colors */
   --color-theme-switch--hover: var(--cyan-50);
@@ -229,6 +232,7 @@ body {
 /* ---------------- || The Calculator || ---------------- */
 .calculator {
   width: min(100%, 33.75rem);
+  overflow-x: hidden;
 }
 
 /* Calculator top */
@@ -337,22 +341,40 @@ body {
 /* Calculator Display */
 .display {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
   align-items: center;
+  width: 100%;
   height: var(--size-display-height);
   margin-top: 2rem;
   padding-inline: var(--size-display-horizontal-padding);
+  overflow-x: scroll;
   border-radius: 0.625rem;
   background-color: var(--color-display-background);
   font-size: var(--text-size-display);
+  white-space: nowrap;
   color: var(--color-display-text);
   transition: background-color var(--duration-background-transition) ease,
     color var(--duration-text-transition) ease;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-display-scrollbar) transparent;
+}
+
+.display::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.display::-webkit-scrollbar-thumb {
+  background-color: var(--color-display-scrollbar);
+}
+
+.display::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 #display-text {
   margin-top: 0.25rem;
   letter-spacing: -0.93px;
+  text-align: end;
 }
 
 /* Calculator Keypad */

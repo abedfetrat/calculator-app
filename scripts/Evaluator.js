@@ -11,6 +11,23 @@ export default class Evaluator {
             // Read character
             const char = input[scanner];
 
+            // If it is the first character in the input and the character is a negation sign
+            // read the following number as a negativ number
+            if (scanner === 0 && char === '-') {
+                let digits = "";
+
+                // From the next position forwards look for consecutive digits and decimals 
+                // that makes a single number and parse them all as one
+                scanner++;
+                while (/[0-9\.]/.test(input[scanner])) {
+                    digits += input[scanner++];
+                }
+                // Push the number to the tokens array
+                const number = char + digits;
+                tokens.push(Number.parseFloat(number));
+                continue;
+            }
+
             // If the character is a digit:
             if (/[0-9]/.test(char)) {
                 let digits = "";

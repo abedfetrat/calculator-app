@@ -156,21 +156,25 @@ export default class Evaluator {
         let c = undefined;
         switch (operation) {
             case '*':
-                c = b * a;
+                c = this._floatify(b * a);
                 break;
             case '/':
-                c = b / a;
+                c = this._floatify(b / a);
                 break;
             case '+':
-                c = b + a;
+                c = this._floatify(b + a);
                 break;
             case '-':
-                c = b - a;
+                c = this._floatify(b - a);
                 break;
             case '^':
                 c = Math.pow(b, a);
                 break;
         }
         numbers.push(c);
+    }
+    
+    _floatify(num) {
+        return parseFloat(num.toFixed(10));
     }
 }

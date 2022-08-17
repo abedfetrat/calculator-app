@@ -9,15 +9,17 @@ export default class Calculator {
     }
 
     delete() {
-        const lastChar = this.displayText[this.displayText.length - 1];
         const operandIndex = this.operands.length - 1;
+        if (this.operands[operandIndex].length === 0 && this.operands.length > 1) {
+            this.operands.pop();
+        }
+
+        const lastChar = this.displayText[this.displayText.length - 1];
         if (/[0-9\.]/.test(lastChar)) {
             this.operands[operandIndex] = this.operands[operandIndex].slice(0, -1);
         }
 
-        if (this.operands[operandIndex].length === 0 && this.operands.length > 1) {
-            this.operands.pop();
-        }
+        console.log(this.operands);
 
         this.displayText = this.displayText.slice(0, -1);
         this.updateDisplay();
@@ -93,7 +95,12 @@ export default class Calculator {
 
     updateOperand(value) {
         const last = this.operands.length - 1;
+        // Limit digts to 15
         if (this.operands[last].length === 15) return false;
+        // Limit digits after decimal point to 10 
+        if (this.operands[last].includes('.')) {
+            if (this.operands[last].split('.')[1].length === 10) return;
+        }
         this.operands[last] += value;
         return true;
     }
